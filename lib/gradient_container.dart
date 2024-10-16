@@ -1,16 +1,11 @@
+import 'package:first_app/dice_roller.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/custom_text_try.dart';
 
 class GradientContainer extends StatelessWidget {
 
-  GradientContainer({super.key});
-  var activeDiceImage = 'assets/images/dice-images/dice-6.png';
-  var count = 0;
-  void rollPress() {
-    activeDiceImage = 'assets/images/dice-images/dice-1.png';
-    count++;
-    print('asdsafd ${count}');
-  }
+  const GradientContainer({super.key});
+  
 
   @override
   Widget build(context) {
@@ -26,26 +21,8 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              activeDiceImage,
-              width: 200,
-            ),
-            const SizedBox(height: 60),
-            TextButton(
-              style: TextButton.styleFrom(
-                // padding: const EdgeInsets.only(top: 30),
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(fontSize: 28),
-              ),
-              onPressed: rollPress,
-              child: const Text('Press Me'),
-            ),
-          ],
-        ),
+      child: const Center(
+        child: DiceRoller(),
       ),
     );
   }
